@@ -1,0 +1,129 @@
+//
+//  QuizTableViewController.swift
+//  iQuizPart2
+//
+//  Created by Andrew Yu on 11/12/15.
+//  Copyright © 2015 Derry Cheng. All rights reserved.
+//
+
+import UIKit
+
+
+struct Question {
+    var question : String
+    var answers : [String]
+    var correctAnswer : String
+}
+
+
+
+
+class QuizTableViewController: UITableViewController {
+
+    let quizNames = ["Math", "Science", "Marvel Super Heros"]
+    let quizImages = [UIImage(named: "math"), UIImage(named: "science"), UIImage(named: "marvel")]
+    let MathQuiz = [Question(question: "2+2?", answers: ["4","5", "6", "7"], correctAnswer: "4"), Question(question:"4*4?", answers: ["16","22","124","0"], correctAnswer: "16")]
+    
+    let ScienceQuiz = [Question(question: "What is H20?", answers: ["Water","Shampoo", "Fire", "Rainbows"], correctAnswer: "Water"), Question(question:"What helps grow muscles?", answers: ["French Fries","Protein","Potatoe Skins","Diet Coke"], correctAnswer: "Protein")]
+
+    let MarvelQuiz = [Question(question: "What is Thor's weapon?", answers: ["Screwdriver","Ruler", "Hammer", "Nail"], correctAnswer: "Hammer"), Question(question:"What is Iron Man's name?", answers: ["Peter Parker","Tony Stark","Harry Potter","Derry Cheng"], correctAnswer: "Tony Stark")]
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        self.navigationController?.navigationBar.topItem?.title = "Pick a quiz!"
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return self.quizImages.count
+    }
+
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("quizCell", forIndexPath: indexPath) as! QuizCell
+        cell.quizTitle.text = self.quizNames[indexPath.row]
+        cell.quizImage.image = self.quizImages[indexPath.row]
+
+        // Configure the cell...
+
+        return cell
+    }
+    
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let cell = sender as! QuizCell
+        
+        let questionController = segue.destinationViewController as! QuestionViewController
+        
+        switch  cell.quizTitle.text! {
+            case "Math" :
+                questionController.questions = self.MathQuiz
+                questionController.navigationItem.title = "Math Quiz"
+            case "Science" :
+                questionController.questions = self.ScienceQuiz
+                questionController.navigationItem.title = "Science Quiz"
+            case "Marvel Super Heros" :
+                questionController.questions = self.MarvelQuiz
+                questionController.navigationItem.title = "Marvel Super Heros Quiz"
+            
+        default :
+            break
+   
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+}
