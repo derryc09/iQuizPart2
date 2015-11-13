@@ -204,7 +204,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiL-dP-iiP">
-                                <rect key="frame" x="166" y="156" width="42" height="21"/>
+                                <rect key="frame" x="20" y="156" width="335" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hab-lt-HyA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -212,17 +215,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YiL-dP-iiP" firstAttribute="leading" secondItem="fFC-Is-UTn" secondAttribute="leading" id="283-Ke-5Hk"/>
+                            <constraint firstItem="YiL-dP-iiP" firstAttribute="top" secondItem="Hss-aW-DPf" secondAttribute="bottom" constant="92" id="5R9-wa-ajQ"/>
+                            <constraint firstItem="YiL-dP-iiP" firstAttribute="centerX" secondItem="jge-Oo-zug" secondAttribute="centerX" id="5XL-gi-J37"/>
                             <constraint firstItem="fFC-Is-UTn" firstAttribute="leading" secondItem="jge-Oo-zug" secondAttribute="leadingMargin" constant="4" id="DBJ-t6-OII"/>
-                            <constraint firstItem="YiL-dP-iiP" firstAttribute="centerY" secondItem="jge-Oo-zug" secondAttribute="centerY" constant="-167" id="DOc-x6-KzY"/>
+                            <constraint firstItem="YiL-dP-iiP" firstAttribute="width" secondItem="jge-Oo-zug" secondAttribute="width" id="Fnp-jc-O6I"/>
                             <constraint firstItem="fFC-Is-UTn" firstAttribute="width" secondItem="jge-Oo-zug" secondAttribute="width" constant="-333" id="KaA-G3-Ygd"/>
                             <constraint firstItem="W6B-dN-HMD" firstAttribute="top" secondItem="fFC-Is-UTn" secondAttribute="bottom" constant="290" id="QLK-US-ht3"/>
-                            <constraint firstItem="fFC-Is-UTn" firstAttribute="centerX" secondItem="YiL-dP-iiP" secondAttribute="centerX" id="Wpd-GC-56N"/>
+                            <constraint firstItem="YiL-dP-iiP" firstAttribute="trailing" secondItem="fFC-Is-UTn" secondAttribute="trailing" id="adU-hl-hDp"/>
+                            <constraint firstItem="YiL-dP-iiP" firstAttribute="width" secondItem="jge-Oo-zug" secondAttribute="width" id="dsh-uG-fMc"/>
                             <constraint firstItem="YiL-dP-iiP" firstAttribute="width" secondItem="jge-Oo-zug" secondAttribute="width" constant="-333" id="q2Z-NL-opZ"/>
-                            <constraint firstItem="YiL-dP-iiP" firstAttribute="centerX" secondItem="jge-Oo-zug" secondAttribute="centerX" id="u7k-1j-aIJ"/>
                             <constraint firstItem="fFC-Is-UTn" firstAttribute="width" secondItem="jge-Oo-zug" secondAttribute="width" id="uyO-Cc-n68"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Fnp-jc-O6I"/>
+                                <exclude reference="dsh-uG-fMc"/>
+                                <exclude reference="q2Z-NL-opZ"/>
                                 <exclude reference="KaA-G3-Ygd"/>
                                 <exclude reference="uyO-Cc-n68"/>
                             </mask>
