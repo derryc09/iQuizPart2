@@ -12,6 +12,7 @@ class AnswerViewController: UIViewController {
 
     @IBOutlet weak var correctLabel: UILabel!
     @IBOutlet weak var yourAnswer: UILabel!
+    @IBOutlet weak var nextQuestion: UIButton!
     
     var correctAnswer = String()
     var selectedAnswer = String()

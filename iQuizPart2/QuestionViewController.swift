@@ -12,17 +12,20 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     var questions = [Question]()
 
     var selectedAnswer = String()
-     
-
-    
     var correctAnswer = String()
+    
+    
 
     @IBOutlet weak var answer1: UIButton!
-    
     @IBOutlet weak var answer2: UIButton!
     @IBOutlet weak var answer3: UIButton!
-    
     @IBOutlet weak var answer4: UIButton!
+    
+    @IBOutlet weak var submit: UIButton!
+    
+    
+    @IBOutlet weak var chosen: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +35,25 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         for button in self.view.subviews {
             if button.isKindOfClass(UIButton) {
                 let b = button as! UIButton
-                b.addTarget(self, action: "moveToAnswer:", forControlEvents: UIControlEvents.TouchUpInside)
+                b.addTarget(self, action: "changeLabel:", forControlEvents: UIControlEvents.TouchUpInside)
                 b.hidden = true
+                
             }
         }
-     
-        
+        submit.addTarget(self, action: "moveToAnswer:", forControlEvents: UIControlEvents.TouchUpInside)
+        submit.setTitle("Submit", forState: .Normal)
+        chosen.hidden = true
     }
+    
+    func changeLabel (sender: UIButton){
+        if(sender.titleLabel?.text != "Submit"){
+            selectedAnswer = (sender.titleLabel?.text)!
+            chosen.text = "You have chosen: \(sender.titleLabel!.text!)"
+        }
+        submit.hidden = false
+        chosen.hidden = false
+    }
+    
     
     func moveToAnswer(sender : UIButton) {
         self.performSegueWithIdentifier("goToAnswer", sender: sender)
@@ -65,7 +80,8 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        chosen.hidden = true
+        submit.hidden = true
         let q = questions[indexPath.row]
         correctAnswer = q.correctAnswer
         
@@ -95,11 +111,12 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         let view = segue.destinationViewController as! AnswerViewController
-        let button = sender as! UIButton
+//        let button = sender as! UIButton
         
         
-        view.selectedAnswer = (button.titleLabel?.text)!
+        view.selectedAnswer = selectedAnswer
         view.correctAnswer = self.correctAnswer
+        
         
         
     }
