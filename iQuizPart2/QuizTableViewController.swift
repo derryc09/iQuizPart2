@@ -13,6 +13,7 @@ struct Question {
     var question : String
     var answers : [String]
     var correctAnswer : String
+    var played: BooleanType;
 }
 
 
@@ -22,11 +23,11 @@ class QuizTableViewController: UITableViewController {
 
     let quizNames = ["Math", "Science", "Marvel Super Heros"]
     let quizImages = [UIImage(named: "math"), UIImage(named: "science"), UIImage(named: "marvel")]
-    let MathQuiz = [Question(question: "2+2?", answers: ["4","5", "6", "7"], correctAnswer: "4"), Question(question:"4*4?", answers: ["16","22","124","0"], correctAnswer: "16")]
+    let MathQuiz = [Question(question: "2+2?", answers: ["4","5", "6", "7"], correctAnswer: "4", played: false), Question(question:"4*4?", answers: ["16","22","124","0"], correctAnswer: "16", played: false)]
     
-    let ScienceQuiz = [Question(question: "What is H20?", answers: ["Water","Shampoo", "Fire", "Rainbows"], correctAnswer: "Water"), Question(question:"What helps grow muscles?", answers: ["French Fries","Protein","Potatoe Skins","Diet Coke"], correctAnswer: "Protein")]
+    let ScienceQuiz = [Question(question: "What is H20?", answers: ["Water","Shampoo", "Fire", "Rainbows"], correctAnswer: "Water", played: false), Question(question:"What helps grow muscles?", answers: ["French Fries","Protein","Potatoe Skins","Diet Coke"], correctAnswer: "Protein", played: false)]
 
-    let MarvelQuiz = [Question(question: "What is Thor's weapon?", answers: ["Screwdriver","Ruler", "Hammer", "Nail"], correctAnswer: "Hammer"), Question(question:"What is Iron Man's name?", answers: ["Peter Parker","Tony Stark","Harry Potter","Derry Cheng"], correctAnswer: "Tony Stark")]
+    let MarvelQuiz = [Question(question: "What is Thor's weapon?", answers: ["Screwdriver","Ruler", "Hammer", "Nail"], correctAnswer: "Hammer", played: false), Question(question:"What is Iron Man's name?", answers: ["Peter Parker","Tony Stark","Harry Potter","Derry Cheng"], correctAnswer: "Tony Stark", played: false)]
 
     
     override func viewDidLoad() {

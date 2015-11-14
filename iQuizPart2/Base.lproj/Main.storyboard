@@ -75,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dcA-Sz-clq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dcA-Sz-clq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -83,7 +83,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="quizCell" id="rKW-em-rYx" customClass="QuizCell" customModule="iQuizPart2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rKW-em-rYx" id="mab-3i-1VD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -111,41 +111,52 @@
                                     <outlet property="delegate" destination="15i-YG-6fe" id="bKf-Fr-u0d"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ZRD-eh-v1O">
-                                <rect key="frame" x="27" y="371" width="320" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ZRD-eh-v1O">
+                                <rect key="frame" x="27" y="358" width="320" height="30"/>
                                 <state key="normal" title="                                                                                "/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5NP-SS-Y7w">
-                                <rect key="frame" x="27" y="409" width="320" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5NP-SS-Y7w">
+                                <rect key="frame" x="27" y="396" width="320" height="30"/>
                                 <state key="normal" title="                                                                                "/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="LJO-Pz-9hT">
-                                <rect key="frame" x="27" y="467" width="320" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="LJO-Pz-9hT">
+                                <rect key="frame" x="27" y="434" width="320" height="30"/>
                                 <state key="normal" title="                                                                                "/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wLR-FT-HW5">
-                                <rect key="frame" x="27" y="514" width="320" height="30"/>
+                                <rect key="frame" x="27" y="472" width="320" height="30"/>
                                 <state key="normal" title="                                                                                "/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="chosen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASO-XR-3JZ">
-                                <rect key="frame" x="20" y="552" width="335" height="38"/>
+                                <rect key="frame" x="20" y="524" width="335" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsD-Rw-6hc">
+                                <rect key="frame" x="281" y="584" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wq-mG-B8c">
+                                <rect key="frame" x="53" y="588" width="220" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsD-Rw-6hc">
-                                <rect key="frame" x="163" y="617" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wLR-FT-HW5" firstAttribute="width" secondItem="eQq-d5-w7D" secondAttribute="width" constant="-55" id="410-nS-yUe"/>
                             <constraint firstItem="5NP-SS-Y7w" firstAttribute="centerY" secondItem="eQq-d5-w7D" secondAttribute="centerY" id="4Wz-vC-5Fi"/>
+                            <constraint firstItem="5NP-SS-Y7w" firstAttribute="top" secondItem="ZRD-eh-v1O" secondAttribute="bottom" constant="8" id="CDD-GA-e1z"/>
+                            <constraint firstItem="VsD-Rw-6hc" firstAttribute="top" secondItem="dcA-Sz-clq" secondAttribute="bottom" constant="266" id="CY0-1k-8HR"/>
                             <constraint firstItem="LJO-Pz-9hT" firstAttribute="top" secondItem="5NP-SS-Y7w" secondAttribute="bottom" constant="28" id="EzW-TI-uCd"/>
                             <constraint firstItem="ZRD-eh-v1O" firstAttribute="leading" secondItem="wLR-FT-HW5" secondAttribute="leading" id="Ggf-nl-tF8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VsD-Rw-6hc" secondAttribute="trailing" constant="25" id="Hg5-pA-vCX"/>
                             <constraint firstItem="5NP-SS-Y7w" firstAttribute="top" secondItem="27S-ca-QMN" secondAttribute="bottom" constant="386" id="HlZ-jC-d8F"/>
+                            <constraint firstItem="VsD-Rw-6hc" firstAttribute="centerY" secondItem="eQq-d5-w7D" secondAttribute="centerY" id="PMm-kW-ozH"/>
                             <constraint firstItem="wLR-FT-HW5" firstAttribute="top" secondItem="LJO-Pz-9hT" secondAttribute="bottom" constant="17" id="QBd-t4-zcv"/>
+                            <constraint firstItem="LJO-Pz-9hT" firstAttribute="top" secondItem="5NP-SS-Y7w" secondAttribute="bottom" constant="8" id="UCr-mb-XLy"/>
                             <constraint firstItem="ZRD-eh-v1O" firstAttribute="leading" secondItem="5NP-SS-Y7w" secondAttribute="leading" id="YAf-xO-93W"/>
                             <constraint firstItem="ZRD-eh-v1O" firstAttribute="centerX" secondItem="dcA-Sz-clq" secondAttribute="centerX" id="aHv-Yy-dzp"/>
                             <constraint firstItem="LJO-Pz-9hT" firstAttribute="centerY" secondItem="eQq-d5-w7D" secondAttribute="centerY" id="aP5-zO-hwl"/>
@@ -156,12 +167,16 @@
                             <constraint firstItem="ZRD-eh-v1O" firstAttribute="width" secondItem="eQq-d5-w7D" secondAttribute="width" constant="-55" id="eGw-kl-ey3"/>
                             <constraint firstItem="dcA-Sz-clq" firstAttribute="top" secondItem="27S-ca-QMN" secondAttribute="bottom" id="exX-Li-7zL"/>
                             <constraint firstItem="LJO-Pz-9hT" firstAttribute="width" secondItem="eQq-d5-w7D" secondAttribute="width" constant="-55" id="gI7-ch-nie"/>
+                            <constraint firstItem="VsD-Rw-6hc" firstAttribute="centerX" secondItem="eQq-d5-w7D" secondAttribute="centerX" id="gW2-bD-6hh"/>
                             <constraint firstItem="LJO-Pz-9hT" firstAttribute="top" secondItem="5NP-SS-Y7w" secondAttribute="bottom" constant="23" id="iBL-6N-EOP"/>
                             <constraint firstItem="wLR-FT-HW5" firstAttribute="centerY" secondItem="eQq-d5-w7D" secondAttribute="centerY" id="lsx-2Q-Act"/>
                             <constraint firstItem="dcA-Sz-clq" firstAttribute="leading" secondItem="eQq-d5-w7D" secondAttribute="leading" id="o3J-yR-szd"/>
                             <constraint firstItem="ZRD-eh-v1O" firstAttribute="top" secondItem="dcA-Sz-clq" secondAttribute="bottom" constant="15" id="oEd-uH-QfC"/>
                             <constraint firstAttribute="trailing" secondItem="dcA-Sz-clq" secondAttribute="trailing" id="rCF-zv-Qnl"/>
+                            <constraint firstItem="VsD-Rw-6hc" firstAttribute="centerX" secondItem="eQq-d5-w7D" secondAttribute="centerX" id="rSK-c0-UFu"/>
+                            <constraint firstItem="VsD-Rw-6hc" firstAttribute="top" secondItem="27S-ca-QMN" secondAttribute="bottom" constant="520" id="sTq-6c-Wh1"/>
                             <constraint firstItem="ZRD-eh-v1O" firstAttribute="leading" secondItem="LJO-Pz-9hT" secondAttribute="leading" id="xI9-Ah-cjQ"/>
+                            <constraint firstItem="ZRD-eh-v1O" firstAttribute="top" secondItem="dcA-Sz-clq" secondAttribute="bottom" constant="2" id="y6l-cH-ql4"/>
                             <constraint firstItem="5NP-SS-Y7w" firstAttribute="top" secondItem="ZRD-eh-v1O" secondAttribute="bottom" constant="8" id="yOI-0L-twF"/>
                             <constraint firstItem="wLR-FT-HW5" firstAttribute="top" secondItem="27S-ca-QMN" secondAttribute="bottom" constant="491" id="yXz-Oa-3K1"/>
                         </constraints>
@@ -176,6 +191,10 @@
                                 <exclude reference="byM-E3-aNr"/>
                                 <exclude reference="lsx-2Q-Act"/>
                                 <exclude reference="yXz-Oa-3K1"/>
+                                <exclude reference="CY0-1k-8HR"/>
+                                <exclude reference="PMm-kW-ozH"/>
+                                <exclude reference="gW2-bD-6hh"/>
+                                <exclude reference="rSK-c0-UFu"/>
                             </mask>
                         </variation>
                     </view>
@@ -186,6 +205,7 @@
                         <outlet property="answer3" destination="LJO-Pz-9hT" id="c0k-1z-t6e"/>
                         <outlet property="answer4" destination="wLR-FT-HW5" id="ntZ-di-Z98"/>
                         <outlet property="chosen" destination="ASO-XR-3JZ" id="cSV-9f-RRh"/>
+                        <outlet property="score" destination="4wq-mG-B8c" id="d1h-lK-Pkf"/>
                         <outlet property="submit" destination="VsD-Rw-6hc" id="vAS-CI-mv6"/>
                         <segue destination="39S-5v-CDA" kind="show" identifier="goToAnswer" id="Etx-QX-K1a"/>
                     </connections>
@@ -224,13 +244,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ac-p8-f5g">
-                                <rect key="frame" x="262" y="597" width="98" height="30"/>
-                                <state key="normal" title="Next Question"/>
-                                <connections>
-                                    <segue destination="15i-YG-6fe" kind="show" id="Apb-3Z-PqP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -259,7 +272,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="correctLabel" destination="YiL-dP-iiP" id="jcn-48-TMt"/>
-                        <outlet property="nextQuestion" destination="2Ac-p8-f5g" id="OVe-C9-aPt"/>
                         <outlet property="yourAnswer" destination="fFC-Is-UTn" id="WAm-kH-Jbh"/>
                     </connections>
                 </viewController>
@@ -290,7 +302,4 @@
     <resources>
         <image name="math" width="520" height="510"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Apb-3Z-PqP"/>
-    </inferredMetricsTieBreakers>
 </document>

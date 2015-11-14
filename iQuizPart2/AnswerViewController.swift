@@ -12,11 +12,10 @@ class AnswerViewController: UIViewController {
 
     @IBOutlet weak var correctLabel: UILabel!
     @IBOutlet weak var yourAnswer: UILabel!
-    @IBOutlet weak var nextQuestion: UIButton!
     
     var correctAnswer = String()
     var selectedAnswer = String()
-    
+    var questions = [Question]()
     
     
     override func viewDidLoad() {
@@ -42,14 +41,14 @@ class AnswerViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    
+  
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//
+//        
+//        
+//
+//    }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

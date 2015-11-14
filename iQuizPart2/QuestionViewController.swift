@@ -14,6 +14,12 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     var selectedAnswer = String()
     var correctAnswer = String()
     
+    var row = Int()
+    var questionsCount = Int()
+    var correctlyAnswered = 0
+    var questionsPlayed = 0
+    
+    
     
 
     @IBOutlet weak var answer1: UIButton!
@@ -26,6 +32,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var chosen: UILabel!
     
+    @IBOutlet weak var score: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +47,8 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
                 
             }
         }
+        score.textColor = UIColor.blackColor()
+        score.text = "Out of the \(questions.count) questions we have, you have played \(questionsPlayed) of them and answered \(correctlyAnswered) of them correctly"
         submit.addTarget(self, action: "moveToAnswer:", forControlEvents: UIControlEvents.TouchUpInside)
         submit.setTitle("Submit", forState: .Normal)
         chosen.hidden = true
@@ -84,6 +93,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         submit.hidden = true
         let q = questions[indexPath.row]
         correctAnswer = q.correctAnswer
+        row = indexPath.row
         
         self.answer1.hidden = false
         self.answer2.hidden = false
@@ -111,13 +121,28 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         let view = segue.destinationViewController as! AnswerViewController
-//        let button = sender as! UIButton
         
         
+        if(selectedAnswer == correctAnswer && questions[row].played.boolValue == false){
+            questions[row].played = true
+            correctlyAnswered++
+            questionsPlayed++
+            
+        } else if (questions[row].played.boolValue == false){
+            questions[row].played = true
+            questionsPlayed++
+
+        }
+        score.text = "Out of the \(questions.count) questions we have, you have played \(questionsPlayed) of them and answered \(correctlyAnswered) of them correctly"
+        
+        if(questionsPlayed == questions.count){
+            score.textColor = UIColor.redColor()
+            
+            score.text = "You have completed the quiz!! Out of the \(questions.count) questions we have, you have played \(questionsPlayed) of them and answered \(correctlyAnswered) of them correctly"
+        }
         view.selectedAnswer = selectedAnswer
         view.correctAnswer = self.correctAnswer
-        
-        
+    
         
     }
   
